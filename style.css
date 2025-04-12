@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Orbitron:wght@400..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body, html{
+    height:100%;
+    width: 100%;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #14001e, #050d1f);
+    user-select: none;
+}
+
+.container-wrapper{
+    height: clamp(450px,90vh,600px);
+    width: 100%;
+    min-width: 700px;
+    /* the combination of ,min-width:; + width:; is better than
+    max() in case of using with grid or flex with natural flow
+    and prevent overflow in smaller screen. this usage here 
+    is very appropriate and if the max() was used it would cause
+    overflow when vw shrinks */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container1{
+    width:98%;
+    height:95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo{
+    font-size: max(100px,20cqw);
+    width: min-content;
+}
+.container2{
+    width:98%;
+    height:95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* i removed opacity:0; for any future problems */
+}
+.caution-wrapper{
+    width:80%;
+    height: 90%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.caution{
+    font-size: 1.5rem;
+    color:rgb(255, 51, 0);
+    text-shadow: 0 0 5px #ff0000;
+}
+.funny-intro{
+    height:50%;
+    width:auto ;
+    user-select: none;
+    -webkit-user-drag: none;
+    border-radius: 20%;
+}
+
+.container3{
+    width: 98%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.p1-wrapper, .p2-wrapper{
+    width: 30%;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.p1, .p2{
+    height:40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    font-size: clamp(1rem,5cqw,1.5rem);
+}
+.p1{
+    align-self: flex-start;
+    margin-left: 25%;
+    color:red;
+    text-shadow: 0 0 4px red;
+}
+.p2{
+    align-self: flex-end;
+    margin-right: 25%;
+    color:#00bfff;
+    text-shadow: 0 0 4px #00bfff;
+}
+.score{
+    height:60%;
+    font-size: clamp(3rem,15cqw,5rem);
+}
+.game{
+    width:40%;
+    min-width:200px;
+    max-width: 330px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.round{
+    width:70%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo2{
+    width:min(25%,80px);
+}
+.status{
+    height:50%;
+    color:rgb(15, 206, 12);
+    font-size: clamp(1rem,2cqw,1.25rem);
+}
+.gameboard-wrapper{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gameboard{
+    width: 100%;
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    background-image: linear-gradient(to right, rgb(247, 87, 87),rgb(97, 238, 246));
+    gap: 2px;
+    outline: 2px solid #121d0c;
+    aspect-ratio: 1; /* important property .. */
+}
+.cell{
+    color:white;
+    font-family: "Orbitron", sans-serif;
+    background-color: #14001e;
+    font-size: clamp(3rem,min(2vw,1.5vh),4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+.cell:hover{
+    background-color: #14001ee2;
+}
+.options{
+    height:10%;
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.options > button{
+    height:70%;
+    width:max(30%,80px);
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+}
+.main-menu,.new-game{
+    background-image: linear-gradient(to right, rgb(248, 137, 137),rgb(106, 240, 247));
+}
+.main-menu:hover,.new-game:hover{
+    background-image: linear-gradient(to right, rgb(247, 87, 87),rgb(97, 238, 246));
+    text-shadow: 0 0 5px;
+
+}
+.next-round{
+    color:rgb(0, 21, 255);
+    text-shadow: 0 0 5px rgb(4, 0, 255),
+    0 0 10px rgb(4, 0, 255);
+    background-image: linear-gradient(to right, rgba(4, 255, 33, 0.807),rgba(255, 200, 0, 0.579));
+
+}
+.next-round:hover{
+    background-image: linear-gradient(to right, rgb(4, 255, 34),rgb(255, 200, 0));
+    text-shadow: 0 0 5px rgb(4, 0, 255),
+    0 0 10px rgb(4, 0, 255),
+    0 0 20px rgb(4, 0, 255);
+}
+.next-round:hover::after{
+    content:' ➤';
+}
+.main-menu:hover::after{
+    content:' 🏠︎';
+}
+.new-game:hover::after{
+    content:' ↻' ;
+}
+
+.winner-x{
+    color: #ff0000;
+    text-shadow: 0 0 2px #ff0000,
+                 0 0 5px #ff0000,
+                 0 0 10px #ff0000;
+}
+.winner-o{
+    color: #00bfff;
+    text-shadow: 0 0 2px #00bfff,
+                 0 0 5px #00bfff,
+                 0 0 10px #00bfff;
+}
+.set-wrapper{
+    width:60%;
+    height:90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.set{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.question{
+    color: rgb(215, 216, 252);
+}
+.question > div{
+    font-size: 0.7rem;
+    color: rgb(255, 166, 0);
+}
+span{
+    color:rgb(247, 159, 173);
+    font-size: 1.2rem;
+}
+.names{
+    height: 60%;
+}
+#players{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#players p{
+    color:rgb(0, 255, 13);
+    text-shadow: 0 0 5px;
+    align-self: center;
+}
+.player1, .player2 {
+    display: flex;
+    align-items: center;
+}
+.player2{
+    justify-content: flex-end;
+}
+label{
+    margin: 0px 15px;
+    font-size: 2rem;
+}
+input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    background-image: linear-gradient(rgb(16, 16, 34),rgb(22, 21, 67));
+    color: white;
+    font-size: 1rem;
+    width:40%;
+}
+.start{
+    background-image: linear-gradient(to right,rgb(255, 0, 0),rgb(0, 200, 255));
+    border:none;
+    font-size: 2rem;
+    cursor: grab;
+    border-radius:30px;
+    text-shadow: 0 0 2px;
+    height:max(40px,25%);
+}
+.start:disabled{
+    background-image:linear-gradient(to right,rgb(245, 125, 125),rgb(137, 221, 244));;
+}
+
+.x{
+    font-family: "Orbitron", sans-serif;
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff0000,
+                 0 0 20px #ff0000,
+                 0 0 40px #ff0000;
+}
+.o {
+    font-family: "Orbitron", sans-serif;;
+    color: #00bfff;
+    text-shadow: 0 0 5px #00bfff,
+                 0 0 20px #00bfff,
+                 0 0 40px #00bfff;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script2.js" defer></script>
+</head>
+<body>
+    <div class="container-wrapper">
+        <!-- remove container3 class and uncomment
+          the html elements below when finished -->
+        <div data-name="container" class="container1">
+            <div class="logo x">X</div>
+
+            <div class="set-wrapper">
+                <div class="set">
+                    <div class="question">Would you like to add names to the players? <span>(optional)</span>
+                    <div>Player vs Bot will be added soon ..</div>
+                    </div>
+                    <div class="names">
+                        <form action="" id="players">
+                            <div class="player1">
+                                <label for="player1" class="x">X </label>
+                                <input type="text" name="player1" id="player1" placeholder="player1">
+                            </div>
+                            <div class="player2">
+                                <input type="text" name="player2" id="player2" placeholder="player2">
+                                <label for="player2" class="o">O </label>
+                            </div>
+                            <p>⇝ first player's turn is random</p>
+                        </form>
+                    </div>
+                    <button type="submit" form="players" class="start">Start Game!</button>
+                </div>
+            </div>
+        
+            <div class="logo o">O</div>
+        
+        </div>
+    </div>
+
+</body>
+</html>
