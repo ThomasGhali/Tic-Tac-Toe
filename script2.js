@@ -219,8 +219,7 @@ const GameControl = (function() {
             if (cellNumber < 0 || cellNumber > 8){
                 return;//out of range
             } 
-            if (Gameboard.gameboard[cellNumber] == ' ')
-            {
+            if (Gameboard.gameboard[cellNumber] == ' '){
                 Gameboard.gameboard[cellNumber] = `${player.mark}`;
                 this._cellsSelected++;
                 this._first = false;
@@ -250,10 +249,10 @@ const GameControl = (function() {
                 this.switchPlayer();
                 return;
             }
-    
+
             this.checkWin();
     
-            if(this._cellsSelected === 9){
+            if(this._cellsSelected === 9 && !this.checkWin()){
                 this._end = true;
                 this._draw = true;
                 return;
